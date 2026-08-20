@@ -1,4 +1,5 @@
 import Button from "@/components/ui/Button";
+import Card from "@/components/ui/Card";
 
 export default function Home() {
   return (
@@ -7,6 +8,15 @@ export default function Home() {
         <Button variant="primary">View Resume</Button>
         <Button variant="accent">See Live Systems</Button>
         <Button variant="outline">Contact</Button>
+      </div>
+
+      <div className="p-8">
+        <Card>
+          <h3 className="font-display text-lg">Test Card</h3>
+          <p className="text-text-secondary text-sm mt-2">
+            Confirming the Card primitive renders with the right surface, border, and shadow.
+          </p>
+        </Card>
       </div>
     </main>
   );
