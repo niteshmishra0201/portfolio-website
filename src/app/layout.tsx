@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, JetBrains_Mono } from "next/font/google";
+import Nav from "@/components/sections/Nav";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -25,7 +26,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${spaceGrotesk.variable} ${jetbrainsMono.variable}`}>
       <body className="bg-background text-text-primary font-display">
-        {children}
+        <Nav />
+        <div className="md:pl-56 pb-16 md:pb-0">{children}</div>
       </body>
     </html>
   );
