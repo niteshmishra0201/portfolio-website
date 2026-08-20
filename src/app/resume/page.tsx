@@ -2,6 +2,8 @@ import Section from "@/components/ui/Section";
 import Card from "@/components/ui/Card";
 import Badge from "@/components/ui/Badge";
 import { profile, skills, experience, education, certifications } from "@/lib/resume-data";
+import Reveal from "@/components/ui/Reveal";
+
 
 export default function ResumePage() {
   return (
@@ -10,7 +12,9 @@ export default function ResumePage() {
         <h1 className="font-display text-3xl text-ink">Resume</h1>
         <p className="text-text-secondary mt-2 max-w-2xl">{profile.summary}</p>
 
-        {/* Skills */}
+        <Reveal delay={0}>
+
+
         <div className="mt-10">
           <h2 className="font-display text-xl text-ink mb-4">Skills</h2>
           <div className="grid sm:grid-cols-2 gap-4">
@@ -30,8 +34,12 @@ export default function ResumePage() {
             ))}
           </div>
         </div>
+        </Reveal>
 
-        {/* Experience */}
+
+        <Reveal delay={0.1}>
+
+
         <div className="mt-10">
           <h2 className="font-display text-xl text-ink mb-4">Experience</h2>
           {experience.map((job) => (
@@ -49,8 +57,11 @@ export default function ResumePage() {
             </Card>
           ))}
         </div>
+        </Reveal>
 
-        {/* Education */}
+        <Reveal delay={0.2}>
+
+
         <div className="mt-10">
           <h2 className="font-display text-xl text-ink mb-4">Education</h2>
           <Card>
@@ -60,6 +71,10 @@ export default function ResumePage() {
             </p>
           </Card>
         </div>
+        </Reveal>
+
+        <Reveal delay={0.3}>
+
 
         {/* Certifications */}
         <div className="mt-10">
@@ -70,6 +85,9 @@ export default function ResumePage() {
             ))}
           </ul>
         </div>
+        </Reveal>
+
+
       </Section>
     </main>
   );

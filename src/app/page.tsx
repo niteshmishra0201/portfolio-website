@@ -3,11 +3,14 @@ import Section from "@/components/ui/Section";
 import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
 import { profile } from "@/lib/resume-data";
+import Reveal from "@/components/ui/Reveal";
 
 export default function Home() {
   return (
     <main>
       <Section id="overview">
+        <Reveal>
+
         <div className="grid md:grid-cols-2 gap-10 items-center">
           {/* Left: intro */}
           <div>
@@ -36,6 +39,7 @@ export default function Home() {
             Live feature placeholder
           </div>
         </div>
+        </Reveal>
       </Section>
     </main>
   );
