@@ -10,7 +10,7 @@ export default function Home() {
           <div>
             <Badge status="success">Available for opportunities</Badge>
             <h1 className="font-display text-4xl md:text-5xl text-ink mt-4 leading-tight">
-              Your Name
+              Nitesh Mishra
             </h1>
             <p className="text-text-secondary text-lg mt-3">
               Full-stack developer building backend systems — rate limiters,
