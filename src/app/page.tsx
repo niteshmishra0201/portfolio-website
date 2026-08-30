@@ -4,6 +4,8 @@ import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
 import { profile } from "@/lib/resume-data";
 import Reveal from "@/components/ui/Reveal";
+import TrafficPulse from "@/components/sections/TrafficPulse";
+
 
 export default function Home() {
   return (
@@ -34,10 +36,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Right: reserved for the live Traffic Pulse feature (Phase 5) */}
-          <div className="border border-border rounded-xl bg-surface h-64 flex items-center justify-center text-text-secondary text-sm">
-            Live feature placeholder
-          </div>
+          <TrafficPulse />
         </div>
         </Reveal>
       </Section>
