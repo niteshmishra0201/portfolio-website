@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 export type TrafficEvent = {
   id: number;
@@ -8,22 +8,32 @@ export type TrafficEvent = {
   latencyMs: number;
 };
 
+type ConnectionStatus = "connecting" | "live" | "offline";
+
 export function useTrafficStream() {
   const [events, setEvents] = useState<TrafficEvent[]>([]);
-  const [connected, setConnected] = useState(false);
+  const [status, setStatus] = useState<ConnectionStatus>("connecting");
+  const attemptsRef = useRef(0);
 
   useEffect(() => {
     const eventSource = new EventSource("http://localhost:8080/api/traffic-stream");
 
-    eventSource.onopen = () => setConnected(true);
+    eventSource.onopen = () => {
+      attemptsRef.current = 0;
+      setStatus("live");
+    };
 
     eventSource.onmessage = (e) => {
       const data: TrafficEvent = JSON.parse(e.data);
-      setEvents((prev) => [...prev.slice(-9), data]); // keep last 10 events
+      setEvents((prev) => [...prev.slice(-9), data]);
     };
 
     eventSource.onerror = () => {
-      setConnected(false);
+      attemptsRef.current += 1;
+      if (attemptsRef.current >= 2) {
+        setStatus("offline");
+        eventSource.close();
+      }
     };
 
     return () => {
@@ -31,5 +41,5 @@ export function useTrafficStream() {
     };
   }, []);
 
-  return { events, connected };
+  return { events, status };
 }
