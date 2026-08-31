@@ -4,6 +4,11 @@ import Badge from "@/components/ui/Badge";
 import { projects } from "@/lib/resume-data";
 import Reveal from "@/components/ui/Reveal";
 
+export const metadata = {
+  title: "Systems — Nitesh Mishra",
+  description: "Backend systems and platforms built by Nitesh Mishra, including FlowGate and PayFlow.",
+};
+
 const statusLabel: Record<string, string> = {
   operational: "operational",
   live: "live",

@@ -3,7 +3,10 @@ import Card from "@/components/ui/Card";
 import Badge from "@/components/ui/Badge";
 import { profile, skills, experience, education, certifications } from "@/lib/resume-data";
 import Reveal from "@/components/ui/Reveal";
-
+export const metadata = {
+  title: "Resume — Nitesh Mishra",
+  description: "Skills, experience, and education for Nitesh Mishra, Java Full-Stack Developer.",
+};
 
 export default function ResumePage() {
   return (

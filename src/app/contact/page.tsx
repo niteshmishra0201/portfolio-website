@@ -1,5 +1,10 @@
 import Section from "@/components/ui/Section";
 
+export const metadata = {
+  title: "Contact — Nitesh Mishra",
+  description: "Get in touch with Nitesh Mishra.",
+};
+
 export default function ContactPage() {
   return (
     <Section id="contact">
