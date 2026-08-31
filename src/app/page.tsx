@@ -4,7 +4,10 @@ import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
 import { profile } from "@/lib/resume-data";
 import Reveal from "@/components/ui/Reveal";
-import TrafficPulse from "@/components/sections/TrafficPulse";
+// import TrafficPulse from "@/components/sections/TrafficPulse";
+import TrafficPulse from "@/components/sections/TrafficPulseLoader";
+
+
 
 
 export default function Home() {
@@ -36,7 +39,7 @@ export default function Home() {
             </div>
           </div>
 
-          <TrafficPulse />
+          {/* <TrafficPulse /> */}
         </div>
         </Reveal>
       </Section>
